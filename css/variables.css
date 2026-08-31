@@ -1,0 +1,38 @@
+:root {
+  /* Brand */
+  --color-primary: #e55428;
+  --color-primary-dark: #c9431c;
+  --color-primary-light: #f2a488;
+
+  /* Neutrals (from brand guide) */
+  --color-cream: #e5d9d1;
+  --color-taupe: #b2a094;
+  --color-brown: #847164;
+  --color-charcoal: #494440;
+  --color-ink: #191716;
+  --color-paper: #f9f5f2;
+
+  /* Semantic */
+  --bg: var(--color-paper);
+  --bg-alt: var(--color-cream);
+  --bg-dark: var(--color-ink);
+  --text: var(--color-ink);
+  --text-soft: var(--color-charcoal);
+  --text-on-dark: var(--color-paper);
+  --border: var(--color-taupe);
+
+  /* Type */
+  --font-display: "Baloo 2", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius: 18px;
+  --radius-sm: 10px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 96px;
+}
