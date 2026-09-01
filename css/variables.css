@@ -19,6 +19,7 @@
   --bg: var(--color-paper);
   --bg-alt: var(--color-cream);
   --bg-dark: var(--color-ink);
+  --bg-warm-dark: #7a2c17;
   --text: var(--color-ink);
   --text-soft: var(--color-charcoal);
   --text-on-dark: var(--color-paper);
