@@ -46,3 +46,38 @@
     });
   });
 })();
+
+(function () {
+  var icons = document.querySelectorAll(".icon-comic");
+  if (!("IntersectionObserver" in window) || icons.length === 0) {
+    return;
+  }
+
+  icons.forEach(function (svg) {
+    svg.querySelectorAll("path").forEach(function (path) {
+      var hasStroke = path.getAttribute("style") && path.getAttribute("style").indexOf("stroke:") !== -1;
+      if (!hasStroke) return;
+      try {
+        var length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+      } catch (e) {}
+    });
+  });
+
+  var iconObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-drawn");
+          iconObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  icons.forEach(function (svg) {
+    iconObserver.observe(svg);
+  });
+})();
