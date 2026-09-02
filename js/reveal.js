@@ -81,3 +81,26 @@
     iconObserver.observe(svg);
   });
 })();
+
+(function () {
+  var markers = document.querySelectorAll(".marker");
+  if (!("IntersectionObserver" in window) || markers.length === 0) {
+    return;
+  }
+
+  var markerObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-marked");
+          markerObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  markers.forEach(function (m) {
+    markerObserver.observe(m);
+  });
+})();
